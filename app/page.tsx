@@ -6,7 +6,9 @@ import About from "@/components/About";
 import Projects from "@/components/Projects";
 import Testimonials from "@/components/Testimonials";
 import Blog from "@/components/Blog";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -19,7 +21,9 @@ export default function Home() {
       <Projects />
       <Testimonials />
       <Blog />
+      <Contact />
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }

@@ -11,7 +11,7 @@ const tags = [
 const socials = [
   {
     label: "GitHub",
-    href: "https://github.com",
+    href: "https://github.com/Nfon-Carl/",
     path: "M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 2.9.9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.8-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5a10.2 10.2 0 0 0 6.8-9.7C22 6.6 17.5 2 12 2z",
   },
   {
@@ -21,12 +21,12 @@ const socials = [
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com",
+    href: "https://www.linkedin.com/in/nfon-carl",
     path: "M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8.2h4.6V23H.2V8.2zm7.7 0h4.4v2h.1c.6-1.2 2.1-2.4 4.4-2.4 4.7 0 5.5 3.1 5.5 7.1V23h-4.6v-7.2c0-1.7 0-3.9-2.4-3.9s-2.8 1.9-2.8 3.8V23H7.9V8.2z",
   },
   {
     label: "Instagram",
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/mayorcarl48/",
     path: "M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4 1.3-.1 1.7-.1 4.9-.1zm0 2c-3.1 0-3.5 0-4.8.1-1.1.1-1.4.2-1.7.3-.4.2-.7.4-1 .7-.3.3-.5.6-.7 1-.1.3-.3.6-.3 1.7-.1 1.3-.1 1.7-.1 4.8s0 3.5.1 4.8c.1 1.1.2 1.4.3 1.7.2.4.4.7.7 1 .3.3.6.5 1 .7.3.1.6.3 1.7.3 1.3.1 1.7.1 4.8.1s3.5 0 4.8-.1c1.1-.1 1.4-.2 1.7-.3.4-.2.7-.4 1-.7.3-.3.5-.6.7-1 .1-.3.3-.6.3-1.7.1-1.3.1-1.7.1-4.8s0-3.5-.1-4.8c-.1-1.1-.2-1.4-.3-1.7-.2-.4-.4-.7-.7-1-.3-.3-.6-.5-1-.7-.3-.1-.6-.3-1.7-.3-1.3-.1-1.7-.1-4.8-.1zm0 3.4a5.1 5.1 0 1 1 0 10.2 5.1 5.1 0 0 1 0-10.2zm0 8.4a3.3 3.3 0 1 0 0-6.6 3.3 3.3 0 0 0 0 6.6zm6.5-8.6a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z",
   },
 ];
@@ -36,7 +36,7 @@ const avatarTints = ["e8e4da", "d9d4c5", "c9c2b0", "b5ad99"];
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-5 pt-14 pb-0 sm:px-8">
+      <div className="mx-auto flex min-h-[calc(100svh-4rem)] max-w-6xl flex-col justify-center px-5 pt-8 pb-2 sm:px-8">
         {/* Heading block */}
         <div className="relative flex flex-col items-center text-center">
           <span className="flex items-center gap-2 rounded-full bg-paper px-4 py-1.5 text-[13px] font-medium text-ink shadow-lift">
@@ -87,7 +87,7 @@ export default function Hero() {
               &ldquo;
             </span>
             <p className="mt-1 text-sm leading-[1.7] text-ash">
-              Carl&rsquo;s AI-powered rebuild of our platform doubled conversions —
+              Carl&rsquo;s rebuild of our platform doubled our client acquisition —
               highly recommended!
             </p>
             <div className="mt-5 flex items-center justify-center gap-3 lg:justify-start">
@@ -114,27 +114,29 @@ export default function Hero() {
 
           {/* Center: portrait on orange circle */}
           <div className="relative order-1 mx-auto lg:order-2">
-            <div className="relative h-[300px] w-[300px] overflow-hidden rounded-full bg-flame sm:h-[360px] sm:w-[360px]">
+            <div className="relative flex h-[330px] w-[300px] items-end justify-center sm:h-[410px] sm:w-[360px]">
               <div
                 aria-hidden="true"
-                className="absolute inset-0 rounded-full opacity-30 [background-image:radial-gradient(circle_at_center,rgb(251_250_247/0.5)_1px,transparent_1px)] [background-size:14px_14px]"
-              />
+                className="absolute bottom-0 left-1/2 h-[240px] w-[240px] -translate-x-1/2 rounded-full bg-flame sm:h-[300px] sm:w-[300px]"
+              >
+                <div className="absolute inset-0 rounded-full opacity-30 [background-image:radial-gradient(circle_at_center,rgb(251_250_247/0.5)_1px,transparent_1px)] [background-size:14px_14px]" />
+              </div>
               <img
-                src="https://placehold.co/380x560/e8e4da/74736d?text=Your%5CnPortrait"
+                src="/portrait.png"
                 alt="Portrait of Nfon Carl"
-                width={380}
-                height={560}
-                className="absolute bottom-0 left-1/2 h-[104%] w-[58%] -translate-x-1/2 rounded-t-full object-cover object-top"
+                width={830}
+                height={809}
+                className="relative z-10 h-[310px] w-auto max-w-none -translate-x-[20%] object-contain object-bottom sm:h-[385px]"
               />
             </div>
 
             {/* CTA buttons overlapping photo bottom */}
-            <div className="absolute -bottom-6 left-1/2 flex w-max -translate-x-1/2 items-center gap-2 rounded-full bg-paper p-1.5 shadow-float">
+            <div className="absolute -bottom-6 left-1/2 z-20 flex w-max -translate-x-1/2 items-center gap-2 rounded-full bg-paper p-1.5 shadow-float">
               <a
-                href="#projects"
+                href="#contact"
                 className="group flex items-center gap-2 rounded-full bg-coal py-2.5 pr-2 pl-5 text-sm font-semibold text-paper transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-flame-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flame active:translate-y-0"
               >
-                Portfolio
+                Hire Me
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-flame text-paper transition-transform duration-200 group-hover:rotate-45">
                   <svg viewBox="0 0 16 16" className="h-3 w-3" fill="none" aria-hidden="true">
                     <path d="M4 12 12 4m0 0H6m6 0v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
@@ -142,10 +144,10 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="#contact"
+                href="#projects"
                 className="rounded-full border border-ink/15 px-5 py-2.5 text-sm font-semibold text-ink transition-[transform,background-color,color] duration-200 hover:-translate-y-0.5 hover:bg-coal hover:text-paper focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flame active:translate-y-0"
               >
-                Hire Me
+                View Recent Projects
               </a>
             </div>
           </div>

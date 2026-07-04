@@ -11,20 +11,22 @@ export default function About() {
     <section id="about" className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div className="relative mx-auto">
-          <div className="relative h-[280px] w-[280px] overflow-hidden rounded-full bg-flame sm:h-[340px] sm:w-[340px]">
+          <div className="relative flex h-[310px] w-[280px] items-end justify-center sm:h-[380px] sm:w-[340px]">
             <div
               aria-hidden="true"
-              className="absolute inset-0 rounded-full opacity-30 [background-image:radial-gradient(circle_at_center,rgb(251_250_247/0.5)_1px,transparent_1px)] [background-size:14px_14px]"
-            />
+              className="absolute bottom-0 left-1/2 h-[225px] w-[225px] -translate-x-1/2 rounded-full bg-flame sm:h-[280px] sm:w-[280px]"
+            >
+              <div className="absolute inset-0 rounded-full opacity-30 [background-image:radial-gradient(circle_at_center,rgb(251_250_247/0.5)_1px,transparent_1px)] [background-size:14px_14px]" />
+            </div>
             <img
-              src="https://placehold.co/360x540/e8e4da/74736d?text=Your%5CnPortrait"
+              src="/portrait.png"
               alt="Nfon Carl working"
-              width={360}
-              height={540}
-              className="absolute bottom-0 left-1/2 h-[104%] w-[58%] -translate-x-1/2 rounded-t-full object-cover object-top"
+              width={830}
+              height={809}
+              className="relative z-10 h-[290px] w-auto max-w-none -translate-x-[20%] object-contain object-bottom sm:h-[355px]"
             />
           </div>
-          <span className="absolute top-4 right-2 flex h-10 w-10 items-center justify-center rounded-full bg-coal shadow-float">
+          <span className="absolute top-4 right-2 z-20 flex h-10 w-10 items-center justify-center rounded-full bg-coal shadow-float">
             <LaptopIcon className="h-4 w-4 text-flame" />
           </span>
         </div>

@@ -9,28 +9,28 @@ const services = [
     tags: ["Next.js & React", "Full-Stack Apps", "Performance", "SEO-Ready"],
     description:
       "Fast, accessible, production-grade websites and web apps built with modern frameworks and clean, maintainable code.",
-    image: "https://placehold.co/640x360/e8e4da/74736d?text=Website+Development",
+    image: "/website-dev.webp",
   },
   {
     title: "Software Development",
     tags: ["Custom Software", "Internal Tools", "System Architecture", "Scripting"],
     description:
       "End-to-end software built around how your business actually works — internal tools, systems, and utilities designed to last.",
-    image: "https://placehold.co/640x360/e8e4da/74736d?text=Software+Development",
+    image: "/mobile-dev.webp",
   },
   {
     title: "AI Integration & Agents",
     tags: ["Custom AI Agents", "LLM Integration", "RAG Pipelines", "Chatbots"],
     description:
       "Practical AI woven into your product — agents, assistants, and retrieval pipelines that automate real work and delight users.",
-    image: "https://placehold.co/640x360/e8e4da/74736d?text=AI+Integration",
+    image: "/agent-intergration.webp",
   },
   {
     title: "Automation & Workflows",
     tags: ["Process Automation", "Integrations", "Zapier & n8n", "Data Sync"],
     description:
       "Connect your tools and eliminate repetitive work with reliable automations that run quietly in the background.",
-    image: "https://placehold.co/640x360/e8e4da/74736d?text=Automation",
+    image: "/workflows.webp",
   },
 ];
 
@@ -126,8 +126,8 @@ export default function Services() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <div className="px-6 pb-8 sm:px-8">
-                    <ul className="flex flex-wrap gap-2">
+                  <div className="px-6 pb-8 text-center sm:px-8">
+                    <ul className="flex flex-wrap justify-center gap-2">
                       {service.tags.map((tag) => (
                         <li
                           key={tag}
@@ -137,15 +137,15 @@ export default function Services() {
                         </li>
                       ))}
                     </ul>
-                    <p className="mt-4 max-w-md text-[13px] leading-[1.7] text-paper/60">
+                    <p className="mx-auto mt-4 max-w-md text-[13px] leading-[1.7] text-paper/60">
                       {service.description}
                     </p>
                     <img
                       src={service.image}
                       alt=""
-                      width={640}
-                      height={360}
-                      className="mt-6 w-full max-w-md rounded-2xl object-cover"
+                      width={1100}
+                      height={550}
+                      className="mx-auto mt-6 aspect-[2/1] w-full max-w-md rounded-2xl object-cover"
                     />
                   </div>
                 </div>
@@ -157,10 +157,10 @@ export default function Services() {
 
       <div className="mt-10 flex justify-center">
         <a
-          href="#projects"
+          href="#contact"
           className="group flex items-center gap-2 rounded-full bg-flame py-2.5 pr-2 pl-6 text-sm font-semibold text-paper shadow-flame transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-flame-deep focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-flame active:translate-y-0"
         >
-          View All Services
+          Get in Touch
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-paper text-flame transition-transform duration-200 group-hover:rotate-45">
             <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" fill="none" aria-hidden="true">
               <path d="M4 12 12 4m0 0H6m6 0v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
