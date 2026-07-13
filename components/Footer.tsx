@@ -1,9 +1,9 @@
 const footerLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Blog", href: "#blog" },
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Blog", href: "/#blog" },
 ];
 
 export default function Footer() {
@@ -11,14 +11,14 @@ export default function Footer() {
     <footer className="mx-auto max-w-6xl px-5 pb-10 sm:px-8">
       <div className="flex flex-col items-center justify-between gap-5 border-t border-ink/10 pt-8 sm:flex-row">
         <a
-          href="#home"
+          href="/#home"
           className="flex items-center gap-2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-flame"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-flame text-[13px] font-bold text-paper">
-            N
+            C
           </span>
           <span className="text-lg font-semibold tracking-tight">
-            Nfon<span className="text-flame">.</span>
+            Carl<span className="text-flame">.</span>
           </span>
         </a>
 

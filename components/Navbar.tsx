@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 const links = [
-  { label: "Home", href: "#home", active: true },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Projects", href: "#projects" },
-  { label: "Blog", href: "#blog" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Home", href: "/#home", active: true },
+  { label: "Services", href: "/#services" },
+  { label: "About", href: "/#about" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Testimonials", href: "/#testimonials" },
 ];
 
 export default function Navbar() {
@@ -21,14 +21,14 @@ export default function Navbar() {
         className="mx-auto grid h-16 max-w-6xl grid-cols-[1fr_auto_1fr] items-center px-5 sm:px-8 lg:flex lg:justify-between"
       >
         <a
-          href="#home"
+          href="/#home"
           className="flex items-center gap-2 justify-self-start rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-flame"
         >
           <span className="flex h-7 w-7 items-center justify-center rounded-full bg-flame text-[13px] font-bold text-paper">
-            N
+            C
           </span>
           <span className="text-lg font-semibold tracking-tight">
-            Nfon<span className="text-flame">.</span>
+            Carl<span className="text-flame">.</span>
           </span>
         </a>
 
@@ -48,7 +48,7 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="#contact"
+          href="/#contact"
           className="justify-self-center rounded-full bg-coal px-5 py-2.5 text-[13px] font-semibold text-paper shadow-lift transition-[transform,background-color] duration-200 hover:-translate-y-0.5 hover:bg-flame focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-flame active:translate-y-0 lg:justify-self-auto"
         >
           Contact Me
