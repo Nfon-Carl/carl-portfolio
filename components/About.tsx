@@ -41,7 +41,7 @@ export default function About() {
             <span className="font-display italic font-normal text-flame">
               ideas
             </span>{" "}
-            into intelligent products
+            into intelligent Solutions
           </h2>
           <p className="mt-5 max-w-lg text-sm leading-[1.7] text-ash">
             I&rsquo;m Nfon Carl, a web developer and AI specialist. I build

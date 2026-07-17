@@ -1,0 +1,166 @@
+{
+  "name": "Portfolio Contact — Notify + WhatsApp Reply + Save Lead",
+  "nodes": [
+    {
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 0],
+      "webhookId": "portfolio-contact",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "portfolio-contact",
+        "responseMode": "responseNode",
+        "options": {
+          "allowedOrigins": "*"
+        }
+      },
+      "notes": "Receives { name, email, phone, message } from the portfolio contact form. After going live, tighten allowedOrigins to your site's domain."
+    },
+    {
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Notify Me (Gmail)",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [240, 0],
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "sendTo": "mayorcarl48@gmail.com",
+        "subject": "=New lead: {{ $json.body.name }}",
+        "message": "=<h3>New portfolio lead</h3><p><b>Name:</b> {{ $json.body.name }}<br><b>Email:</b> {{ $json.body.email }}<br><b>WhatsApp:</b> {{ $json.body.phone }}</p><p><b>Message:</b><br>{{ $json.body.message }}</p>",
+        "options": {}
+      },
+      "notes": "Select your Gmail OAuth2 credential after import."
+    },
+    {
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "WhatsApp Auto-Reply",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [480, 0],
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "resource": "message",
+        "operation": "sendTemplate",
+        "phoneNumberId": "PASTE-YOUR-META-PHONE-NUMBER-ID",
+        "recipientPhoneNumber": "={{ $('Webhook').item.json.body.phone }}",
+        "template": "lead_followup|en_US",
+        "components": {
+          "component": [
+            {
+              "type": "body",
+              "bodyParameters": {
+                "parameter": [
+                  {
+                    "type": "text",
+                    "text": "={{ $('Webhook').item.json.body.name }}"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "notes": "Needs: WhatsApp credential (permanent token), your Phone Number ID, and an APPROVED utility template named lead_followup with one {{1}} variable in the body. Adjust the template name/language here if yours differs."
+    },
+    {
+      "id": "a1b2c3d4-0004-4000-8000-000000000004",
+      "name": "Save Lead (Google Sheets)",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [720, 0],
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "mode": "url",
+          "value": "PASTE-YOUR-GOOGLE-SHEET-URL"
+        },
+        "sheetName": {
+          "__rl": true,
+          "mode": "name",
+          "value": "Leads"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Date": "={{ $now.format('yyyy-MM-dd HH:mm') }}",
+            "Name": "={{ $('Webhook').item.json.body.name }}",
+            "Email": "={{ $('Webhook').item.json.body.email }}",
+            "Phone": "={{ $('Webhook').item.json.body.phone }}",
+            "Message": "={{ $('Webhook').item.json.body.message }}",
+            "Status": "New"
+          },
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "notes": "Create a sheet with a tab named 'Leads' and header row: Date | Name | Email | Phone | Message | Status. Paste its URL here and select your Google credential."
+    },
+    {
+      "id": "a1b2c3d4-0005-4000-8000-000000000005",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [960, 0],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{ \"ok\": true }",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Notify Me (Gmail)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Notify Me (Gmail)": {
+      "main": [
+        [
+          {
+            "node": "WhatsApp Auto-Reply",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Auto-Reply": {
+      "main": [
+        [
+          {
+            "node": "Save Lead (Google Sheets)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save Lead (Google Sheets)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "pinData": {}
+}

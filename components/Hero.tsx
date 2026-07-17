@@ -87,8 +87,7 @@ export default function Hero() {
               &ldquo;
             </span>
             <p className="mt-1 text-sm leading-[1.7] text-ash">
-              Carl&rsquo;s rebuild of our platform doubled our client acquisition —
-              highly recommended!
+              I build professional websites and WhatsApp Automations that help Cameroonian businesses get found online and never miss a customer inquiry
             </p>
             <div className="mt-5 flex items-center justify-center gap-3 lg:justify-start">
               <div className="flex -space-x-2.5">
