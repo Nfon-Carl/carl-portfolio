@@ -1,11 +1,11 @@
 import LaptopIcon from "./LaptopIcon";
 
 const tags = [
-  { label: "AI Agents", accent: false },
-  { label: "Next.js Apps", accent: true },
-  { label: "LLM Integration", accent: false },
-  { label: "Automation", accent: false },
-  { label: "API Design", accent: false },
+  { label: "Softwares", accent: false },
+  { label: "Websites", accent: true },
+  { label: "Booking Applications", accent: false },
+  { label: "Ai Automations", accent: false },
+  { label: "Google Setup", accent: false },
 ];
 
 const socials = [
