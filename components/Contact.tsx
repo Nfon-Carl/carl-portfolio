@@ -26,15 +26,32 @@ const socials = [
   },
 ];
 
-type Status = "idle" | "sending" | "sent";
+type Status = "idle" | "sending" | "sent" | "error";
 
 export default function Contact() {
   const [status, setStatus] = useState<Status>("idle");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const form = event.currentTarget;
+    const data = new FormData(form);
     setStatus("sending");
-    window.setTimeout(() => setStatus("sent"), 500);
+    try {
+      const res = await fetch(process.env.NEXT_PUBLIC_N8N_WEBHOOK_URL!, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          email: data.get("email"),
+          phone: data.get("phone"),
+          message: data.get("message"),
+        }),
+      });
+      if (!res.ok) throw new Error(`Webhook responded ${res.status}`);
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -155,6 +172,23 @@ export default function Contact() {
 
                 <div>
                   <label
+                    htmlFor="contact-phone"
+                    className="text-[11px] font-medium tracking-wide text-ash uppercase"
+                  >
+                    WhatsApp Number
+                  </label>
+                  <input
+                    id="contact-phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    placeholder="+237 6XX XXX XXX"
+                    className="mt-2 w-full rounded-xl border border-ink/10 bg-cream px-4 py-3 text-sm text-ink placeholder:text-ash/70 transition-colors duration-200 focus:border-flame focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-flame"
+                  />
+                </div>
+
+                <div>
+                  <label
                     htmlFor="contact-message"
                     className="text-[11px] font-medium tracking-wide text-ash uppercase"
                   >
@@ -182,6 +216,13 @@ export default function Contact() {
                     </svg>
                   </span>
                 </button>
+
+                {status === "error" && (
+                  <p className="text-[13px] font-medium text-flame">
+                    Couldn&rsquo;t send your message — please email me directly
+                    at hello@nfoncarl.dev.
+                  </p>
+                )}
               </form>
             )}
           </div>
